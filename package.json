@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://PriyamvadaShah.github.io/BChats",
+"homepage": "https://PriyamvadaShah.github.io/BChats.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

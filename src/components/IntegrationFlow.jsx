@@ -22,7 +22,7 @@ const IntegrationFlow = () => {
       alert("Invalid website URL. Please enter a valid website in the setup.");
       return;
     }
-    const testUrl = `/testChatbot.html?url=${encodeURIComponent(companyWebsite)}`;
+    const testUrl = `https://priyamvadashah.github.io/testChatbot.html?url=${encodeURIComponent(companyWebsite)}`;
     window.open(testUrl, "_blank");
   };
 

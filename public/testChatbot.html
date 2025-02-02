@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Chatbot</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .iframe-container {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+        /* Top Bar */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: yellow;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+        }
+        .chatbot-header {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .chatbot-body {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+            color: gray;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        Chatbot not working as intended? <a href="#" style="color: blue;">Share Feedback</a>
+    </div>
+
+    <!-- Client's Website (Injected via iframe) -->
+    <iframe id="clientIframe" class="iframe-container"></iframe>
+
+    <!-- Dummy Chatbot Overlay -->
+    <div class="chatbot-container">
+        <div class="chatbot-header">Chatbot</div>
+        <div class="chatbot-body">
+            Hello! How can I help you today?
+        </div>
+    </div>
+
+    <script>
+        // Get website URL from query params
+        const urlParams = new URLSearchParams(window.location.search);
+        const clientWebsite = urlParams.get("url");
+
+        // Load the website in iframe
+        if (clientWebsite) {
+            document.getElementById("clientIframe").src = clientWebsite;
+        }
+    </script>
+</body>
+</html>

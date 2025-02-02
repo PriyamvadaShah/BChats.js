@@ -1,5 +1,5 @@
 
-import {  HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login.jsx";
 import Contact from "./components/Contact.jsx";
 import SignUp from "./components/SignUp.jsx";
@@ -41,5 +41,4 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
     </Router>
   );
 }
-
 export default App;

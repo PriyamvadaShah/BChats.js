@@ -30,7 +30,7 @@ const Header = () => {
             className="bg-gradient-to-r from-purple-400 to-pink-500 p-2 rounded-full"
           >
             <img 
-              src="/logo.jpg" 
+              src="./logo.jpg" 
               alt="BeyondChats" 
               className="h-8 w-8 rounded-full object-contain"
             />

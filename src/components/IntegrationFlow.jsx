@@ -15,8 +15,8 @@ const IntegrationFlow = () => {
       savedWebsite = `https://${savedWebsite}`;
     }
     setCompanyWebsite(savedWebsite);
-  }, []);
-
+  }, []); 
+  
   const testChatbot = () => {
     if (!companyWebsite || !companyWebsite.startsWith("http")) {
       alert("Invalid website URL. Please enter a valid website in the setup.");
@@ -25,7 +25,7 @@ const IntegrationFlow = () => {
     const testUrl = `https://priyamvadashah.github.io/BChats.js/testChatbot.html?url=${encodeURIComponent(companyWebsite)}`;
     window.open(testUrl, "_blank");
   };
-  
+
   const handleCopyCode = () => {
     navigator.clipboard.writeText(dummyScript);
     setCopied(true);

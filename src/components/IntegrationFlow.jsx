@@ -25,7 +25,6 @@ const IntegrationFlow = () => {
     const testUrl = `https://priyamvadashah.github.io/BChats.js/testChatbot.html?url=${encodeURIComponent(companyWebsite)}`;
     window.open(testUrl, "_blank");
   };
-
   const handleCopyCode = () => {
     navigator.clipboard.writeText(dummyScript);
     setCopied(true);

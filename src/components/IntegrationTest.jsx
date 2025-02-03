@@ -4,7 +4,7 @@ import { Check, AlertTriangle, Loader } from "lucide-react";
 
 const IntegrationTest = () => {
   const [loading, setLoading] = useState(true);
-  const [success, setSuccess] = useState(null);
+  const [success, setSuccess] = useState(null); 
   const navigate = useNavigate();
 
   useEffect(() => {

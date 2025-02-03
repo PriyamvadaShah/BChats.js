@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Building, Globe, FileText, ChevronRight, Rocket } from "lucide-react";
+import { Building, Globe, Rocket } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const SetupFlow = () => {

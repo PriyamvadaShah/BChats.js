@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Check, AlertTriangle, Loader, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Check, AlertTriangle, Loader } from "lucide-react";
 
 const IntegrationTest = () => {
   const [loading, setLoading] = useState(true);

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
-import { ExternalLink, Mail, Copy, Check, Sparkles } from "lucide-react";
+import { ExternalLink, Check, Sparkles } from "lucide-react";
 
 const IntegrationFlow = () => {
   const [companyWebsite, setCompanyWebsite] = useState("");

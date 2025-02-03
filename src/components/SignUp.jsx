@@ -1,20 +1,8 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { LoginContext } from "../context/LoginContext";
 import { Mail, Lock, User, ArrowRight, Chrome } from "lucide-react";
-import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged
-} from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { firebaseConfig } from "../firebaseConfig";
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
 
 const AuthFlow = () => {
   const { setIsLoggedIn } = useContext(LoginContext);
@@ -23,30 +11,9 @@ const AuthFlow = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) setIsLoggedIn(true);
-    });
-    return () => unsubscribe();
-  }, [setIsLoggedIn]);
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setError("");
-  };
-
-  const handleGoogleLogin = async () => {
-    try {
-      setLoading(true);
-      setError("");
-      await signInWithPopup(auth, googleProvider);
-      setIsLoggedIn(true);
-      navigate("/setup");
-    } catch (error) {
-      setError("Failed to sign in with Google. Please try again.");
-    } finally {
-      setLoading(false);
-    }
   };
 
   const handleSubmit = async (e) => {
@@ -135,12 +102,11 @@ const AuthFlow = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="button"
-            onClick={handleGoogleLogin}
-            disabled={loading}
-            className="w-full bg-white text-gray-900 border border-white/30 py-3 rounded-lg font-semibold shadow-md flex items-center justify-center space-x-2 transition-all"
+            disabled
+            className="w-full bg-gray-400 text-gray-700 border border-white/30 py-3 rounded-lg font-semibold shadow-md flex items-center justify-center space-x-2 transition-all"
           >
-            <Chrome className="h-5 w-5 text-blue-500" />
-            Continue with Google
+            <Chrome className="h-5 w-5 text-gray-500" />
+            Disabled
           </motion.button>
         </form>
 

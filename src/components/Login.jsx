@@ -39,7 +39,7 @@ const AuthFlow = () => {
     try {
       setLoading(true);
       setError("");
-      const result = await signInWithPopup(auth, googleProvider);
+      await signInWithPopup(auth, googleProvider);
       setIsLoggedIn(true);
       navigate("/setup");
     } catch (error) {

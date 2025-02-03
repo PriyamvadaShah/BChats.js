@@ -8,7 +8,7 @@ const AuthFlow = () => {
   const { setIsLoggedIn } = useContext(LoginContext);
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
